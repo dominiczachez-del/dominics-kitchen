@@ -1,0 +1,847 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dominic's Kitchen | Private Chef & Catering</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f3eb;
+            color: #222;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.97);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #d8b56a;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d8b56a;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background:
+    linear-gradient(rgba(7, 35, 28, 0.78), rgba(7, 35, 28, 0.78)),
+    url("{% static 'images/hero.jpg' %}")
+    center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero small {
+            color: #d8b56a;
+            font-family: Arial, sans-serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+    font-size: 64px;
+    margin: 20px 0;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.55);
+}
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 16px 34px;
+            background: #d8b56a;
+            color: #0b0b0b;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            background: white;
+        }.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid #d8b56a;
+}
+
+.button-outline:hover {
+    background: #d8b56a;
+    color: #0b0b0b;
+}
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #b08b3e;
+            font-family: Arial, sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            color:#0b0b0b ;
+            font-size: 42px;
+            margin: 12px 0;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+            color: #0b0101;
+        }
+
+        /* ABOUT */
+        .about {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-image {
+            flex: 1;
+            min-height: 450px;
+            background: url('{% static "images/chef-dominic.jpg" %}');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            color: #0b0b0b;
+            font-size: 40px;
+        }
+
+        .about-text p {
+            line-height: 1.9;
+            color: #555;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #9d7118;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            padding: 35px 28px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 42px;
+        }
+
+        .card h3 {
+            color: #0b0b0b;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.7;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        /* CTA */
+        .cta {
+            background: #0b0b0b;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-top: 0;
+        }
+
+        .cta p {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000000;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        footer strong {
+            color: #d8b56a;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+                min-height: 350px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">DOMINIC'S KITCHEN</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <small>PRIVATE CHEF • FINE DINING • CATERING • PASTRY</small>
+
+        <h1>
+            Where Luxury<br>
+            Meets the Plate.
+        </h1>
+
+        <p>
+            Bespoke culinary experiences crafted by Chef Dominic —
+            from intimate private dinners to unforgettable celebrations,
+            weddings and premium events.
+        </p>
+
+        <div class="hero-buttons">
+            <a class="button" href="#contact">
+                PLAN YOUR DINING EXPERIENCE
+            </a>
+
+            <a class="button button-outline"
+               href="https://wa.me/254727305108"
+               target="_blank">
+                WHATSAPP CHEF DOMINIC
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="about">
+
+       
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+            <small style="color:#b08b3e; letter-spacing:3px;">
+                THE CHEF
+            </small>
+
+            <h2>Meet Chef Dominic</h2>
+
+            <p>
+                <p>
+    Chef Dominic is a professional chef passionate about creating
+    exceptional food and memorable dining experiences.
+</p>
+            </p>
+
+            <p>
+                From intimate private dinners to weddings, corporate events
+                and handcrafted celebration cakes, every experience is
+                carefully planned and prepared with passion.
+            </p>
+
+            <p>
+                <p>
+    With a passion for Continental cuisine, African cuisine, fusion
+    dishes, fine dining and pastry, Chef Dominic brings creativity,
+    precision and professional service to every event.
+</p>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <small>WHAT WE DO</small>
+
+        <h2>Our Culinary Services</h2>
+
+        <p>
+            From your home to your biggest celebration, Dominic's Kitchen
+            creates food experiences designed around you.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">👨‍🍳</div>
+
+            <h3>Private Chef</h3>
+
+              <p>
+    Exclusive private dining experiences crafted around your
+    preferences, occasion and guests.
+</p>  
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🍽️</div>
+
+            <h3>Event Catering</h3>
+
+            <p>
+                Professional catering for weddings, corporate events,
+                birthdays, parties and special occasions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🎂</div>
+
+            <h3>Cakes & Pastry</h3>
+
+            <p>
+                Beautiful celebration cakes, desserts and handcrafted
+                pastry made for memorable occasions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">💍</div>
+
+            <h3>Wedding Catering</h3>
+
+            <p>
+                Complete culinary experiences for your special day,
+                including wedding menus and celebration cakes.
+            </p>
+<div class="card">
+
+    <div class="card-icon">🥂</div>
+
+
+
+    <h3>Fine Dining Experiences</h3>
+
+    <p>
+        Restaurant-quality cuisine, beautiful presentation and
+        memorable dining experiences in the comfort of your venue.
+    </p>
+
+</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section style="background:#f7f3eb; text-align:center;">
+
+    <div class="section-title">
+
+        <small>THE DOMINIC'S KITCHEN EXPERIENCE</small>
+
+        <h2>Why Choose Us?</h2>
+
+        <p>
+            Every detail is thoughtfully prepared to give you exceptional
+            food, professional service and an experience worth remembering.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">✨</div>
+            <h3>Exceptional Quality</h3>
+            <p>
+                Carefully selected ingredients, professional preparation
+                and attention to every detail.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">👨‍🍳</div>
+            <h3>Chef-Led Service</h3>
+            <p>
+                Your experience is personally guided by Chef Dominic,
+                from planning through to presentation.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🥂</div>
+            <h3>Made For Your Occasion</h3>
+            <p>
+                Menus and experiences are tailored to your event,
+                guests, preferences and budget.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<section class="cta" id="contact"><!-- WHY CHOOSE US -->
+
+<section style="background:#f7f3eb; text-align:center;">
+
+    <div class="section-title">
+
+        <small>THE DOMINIC'S KITCHEN EXPERIENCE</small>
+
+        <h2>Why Choose Us?</h2>
+
+        <p>
+            Every detail is thoughtfully prepared to give you exceptional
+            food, professional service and an experience worth remembering.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">✨</div>
+s            <h3>Exceptional Quality</h3>
+            <p>
+                Carefully selected ingredients, professional preparation
+                and attention to every detail.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">👨‍🍳</div>
+            <h3>Chef-Led Service</h3>
+            <p>
+                Your experience is personally guided by Chef Dominic,
+                from planning through to presentation.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🥂</div>
+            <h3>Made For Your Occasion</h3>
+            <p>
+                Menus and experiences are tailored to your event,
+                guests, preferences and budget.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <h2>Let's Create Something Delicious</h2>
+
+    <p>
+        Planning an event or looking for a private dining experience?
+        Let's talk about your next occasion.
+    </p>
+
+    <a class="button" href="https://wa.me/254727305108" target="_blank">
+    WHATSAPP CHEF DOMINIC
+</a>
+
+<p style="margin-top:20px;">
+    <strong>Call / WhatsApp:</strong><br>
+    +254 727 305 108 &nbsp; | &nbsp; +254 723 921 309
+</p>
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<!-- TESTIMONIALS -->
+
+<section style="background:white; text-align:center;">
+
+    <div class="section-title">
+        <small>CLIENT EXPERIENCES</small>
+        <h2>What Our Clients Say</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <p>"Chef Dominic exceeded our expectations. The food was outstanding and beautifully presented."</p>
+            <h4>— Sarah M.</h4>
+        </div>
+
+        <div class="card">
+            <p>"Professional, punctual and incredibly talented. Our guests are still talking about the meal."</p>
+            <h4>— James K.</h4>
+        </div>
+
+        <div class="card">
+            <p>"A truly bespoke dining experience. Every detail was perfect."</p>
+            <h4>— Winnie N.</h4>
+        </div>
+
+    </div>
+
+</section>
+<<!-- GALLERY -->
+
+<section style="background:#f7f3eb; text-align:center;">
+
+```
+<div class="section-title">
+    <small>SIGNATURE MOMENTS</small>
+    <h2>Gallery</h2>
+    <p>A glimpse into our culinary experiences.</p>
+</div>
+
+<div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+    max-width:1200px;
+    margin:auto;">
+
+    <img src="{% static 'images/food1.jpeg' %}"
+     style="width:100%; border-radius:15px;">
+
+    <img src="{% static 'images/food12.jpeg' %}"
+     style="width:100%; border-radius:15px;">
+
+    <img src="{% static 'images/food23.jpeg' %}"
+         style="width:100%; border-radius:15px;">
+
+    <img src="{% static 'images/cake1.jpeg' %}"
+         style="width:100%; border-radius:15px;">
+    <img src="{% static 'images/cake2.jpeg' %}"
+         style="width:100%; border-radius:15px;">
+
+    <img src="{% static 'images/cake3.jpeg' %}"
+         style="width:100%; border-radius:15px;">
+
+    <img src="{% static 'images/CAKE.jpeg' %}"
+         style="width:100%; border-radius:15px;">
+
+    <section class="video-gallery" id="videos">
+    <div class="section-title">
+        <h2>Behind the Scenes</h2>
+        <p>Experience the passion, creativity, and craftsmanship behind Dominic’s Kitchen.</p>
+    </div>
+
+    <div class="video-grid">
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid1.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Dominic’s Kitchen</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid2.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Our Kitchen</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid3.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Chef Dominic in Action</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid4.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Crafted With Passion</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid5.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Fine Dining Experience</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid6.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Fresh From The Kitchen</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid7.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Beautifully Prepared</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid8.mp4' %}" type="video/mp4">
+            </video>
+            <h3>Luxury On Every Plate</h3>
+        </div>
+
+        <div class="video-card">
+            <video controls preload="metadata">
+                <source src="{% static 'Videos/vid9.mp4' %}" type="video/mp4">
+            </video>
+            <h3>The Dominic’s Kitchen Experience</h3>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.video-gallery {
+    padding: 70px 8%;
+    background: #111;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.video-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.video-card video {
+    width: 100%;
+    height: 230px;
+    display: block;
+    object-fit: cover;
+    background: #000;
+}
+
+.video-card h3 {
+    color: #d4af37;
+    text-align: center;
+    padding: 15px 10px;
+    margin: 0;
+    font-size: 17px;
+}
+
+@media (max-width: 900px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .video-gallery {
+        padding: 50px 15px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .video-card {
+        border-radius: 14px;
+    }
+
+    .video-card video {
+        height: 240px;
+    }
+
+    .video-card h3 {
+        font-size: 16px;
+        padding: 14px 8px;
+    }
+}
+</style>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+        © 2026 <strong>Dominic's Kitchen</strong>
+    </p>
+
+    <p>
+        Private Chef • Fine Dining • Catering • Pastry
+    </p>
+</footer>
+
+<a href="https://wa.me/254727305108"
+   style="
+   position:fixed;
+   width:60px;
+   height:60px;
+   bottom:25px;
+   right:25px;
+   background:#25D366;
+   color:white;
+   border-radius:50%;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   text-decoration:none;
+   font-size:30px;
+   box-shadow:0 4px 10px rgba(0,0,0,.3);
+   z-index:1000;">
+   💬
+</a>
+
+</body>
+</html>
