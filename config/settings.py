@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pa4_lr*+$11pp6m0^st^ls*$v8q468c0r+d&2_b(+i&qt(qcum
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dominics-kitchen.onrender.com']
 
 
 # Application definition
