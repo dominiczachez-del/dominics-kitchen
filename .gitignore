@@ -1,5 +1,13 @@
-﻿venv/
-__pycache__/
-*.pyc
-db.sqlite3
+﻿__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
 .env
+db.sqlite3
+*_backup_*.py
+*_backup_*.html
+*_before_seo_*.html
+*_before_link_fix_*.py
