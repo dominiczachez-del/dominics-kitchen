@@ -5,10 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dominic's Kitchen | Private Chef & Catering</title>
-    <meta name="description" content="Dominic's Kitchen offers private chef services, fine dining, event catering, wedding cakes, pastry and bespoke culinary experiences for intimate dinners, weddings and celebrations.">
-<meta name="google-site-verification" content="uY-UQG9Uw2NEZ78vaT__BNPWdgodpZdk-fG4gaFJHSM" />
+    <title>Dominic's Kitchen | Private Chef, Catering, Menus & Culinary Training Kenya</title>
+
+    <meta name="description" content="Dominic's Kitchen offers private chef services, fine dining, event and wedding catering, custom menus, cakes, pastry, cooking and baking training, ingredient shopping and complete culinary experiences across Kenya.">
+
+    <meta name="keywords" content="private chef Kenya, private chef Nairobi, Chef Dominic Kenya, catering Nairobi, wedding catering Kenya, fine dining Nairobi, cooking classes Kenya, baking classes Nairobi, pastry training Kenya, Dominic's Kitchen">
+
+    <meta name="google-site-verification" content="uY-UQG9Uw2NEZ78vaT__BNPWdgodpZdk-fG4gaFJHSM">
+
     <style>
+        :root {
+            --black: #080808;
+            --dark: #101010;
+            --gold: #d8b56a;
+            --gold-dark: #a77b27;
+            --cream: #f7f3eb;
+            --white: #ffffff;
+            --text: #242424;
+            --muted: #666666;
+            --green: #0b231d;
+            --light-green: #173b30;
+        }
+
         * {
             box-sizing: border-box;
             scroll-behavior: smooth;
@@ -17,40 +35,65 @@
         body {
             margin: 0;
             font-family: Georgia, "Times New Roman", serif;
-            background: #f7f3eb;
-            color: #222;
+            background: var(--cream);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.97);
-            padding: 18px 8%;
+            background: rgba(0,0,0,.96);
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            border-bottom: 1px solid rgba(216,181,106,.25);
         }
 
         .logo {
-            color: #d8b56a;
-            font-size: 22px;
+            color: var(--gold);
+            font-size: 21px;
             font-weight: bold;
             letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         nav a {
             color: white;
-            text-decoration: none;
-            margin-left: 25px;
             font-family: Arial, sans-serif;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: .3s;
         }
 
         nav a:hover {
-            color: #d8b56a;
+            color: var(--gold);
+        }
+
+        .nav-button {
+            background: var(--gold);
+            color: #080808 !important;
+            padding: 10px 15px;
+            border-radius: 3px;
         }
 
         /* HERO */
@@ -60,160 +103,173 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 20px 80px;
+            padding: 140px 20px 100px;
             background:
-    linear-gradient(rgba(7, 35, 28, 0.78), rgba(7, 35, 28, 0.78)),
-    url("{% static 'images/hero.jpg' %}")
-    center/cover;
+                linear-gradient(rgba(7,35,28,.78), rgba(7,35,28,.82)),
+                url("{% static 'images/hero.jpg' %}") center/cover;
             color: white;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 950px;
         }
 
-        .hero small {
-            color: #d8b56a;
+        .hero small,
+        .section-title small {
+            color: var(--gold);
             font-family: Arial, sans-serif;
             letter-spacing: 4px;
             text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
         }
 
         .hero h1 {
-    font-size: 64px;
-    margin: 20px 0;
-    line-height: 1.05;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.55);
-}
+            font-size: clamp(46px, 7vw, 78px);
+            margin: 20px 0;
+            line-height: 1.02;
+            text-shadow: 0 4px 20px rgba(0,0,0,.55);
+        }
 
         .hero p {
             font-size: 20px;
-            line-height: 1.7;
-            max-width: 700px;
+            line-height: 1.8;
+            max-width: 780px;
             margin: auto;
+            color: #f4f4f4;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 35px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 35px;
-            padding: 16px 34px;
-            background: #d8b56a;
-            color: #0b0b0b;
-            text-decoration: none;
+            padding: 15px 25px;
+            background: var(--gold);
+            color: #080808;
             font-family: Arial, sans-serif;
             font-weight: bold;
             border-radius: 3px;
+            transition: .3s;
         }
 
         .button:hover {
             background: white;
-        }.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+            transform: translateY(-2px);
+        }
 
-.button-outline {
-    background: transparent;
-    color: white;
-    border: 1px solid #d8b56a;
-}
+        .button-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid var(--gold);
+        }
 
-.button-outline:hover {
-    background: #d8b56a;
-    color: #0b0b0b;
-}
+        .button-outline:hover {
+            background: var(--gold);
+            color: #080808;
+        }
 
-        /* GENERAL SECTIONS */
+        /* GENERAL */
         section {
-            padding: 90px 8%;
+            padding: 90px 7%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title small {
-            color: #b08b3e;
-            font-family: Arial, sans-serif;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            max-width: 850px;
+            margin: 0 auto 50px;
         }
 
         .section-title h2 {
-            color:#0b0b0b ;
-            font-size: 42px;
-            margin: 12px 0;
+            font-size: clamp(34px, 5vw, 48px);
+            margin: 12px 0 15px;
+            color: var(--black);
         }
 
         .section-title p {
-            max-width: 700px;
+            max-width: 760px;
             margin: auto;
-            line-height: 1.7;
-            color: #0b0101;
+            line-height: 1.8;
+            color: var(--muted);
+            font-family: Arial, sans-serif;
         }
 
         /* ABOUT */
         .about {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
         }
 
         .about-image {
-            flex: 1;
-            min-height: 450px;
-            background: url('{% static "images/chef-dominic.jpg" %}');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .about-text {
-            flex: 1;
+            min-height: 540px;
+            background: url('{% static "images/chef-dominic.jpg" %}') center/cover;
+            border-radius: 4px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.16);
         }
 
         .about-text h2 {
-            color: #0b0b0b;
-            font-size: 40px;
+            font-size: 42px;
+            color: var(--black);
         }
 
         .about-text p {
             line-height: 1.9;
             color: #555;
+            font-family: Arial, sans-serif;
+        }
+
+        .signature {
+            color: var(--gold-dark);
+            font-style: italic;
+            font-size: 24px;
+            margin-top: 25px;
         }
 
         /* SERVICES */
         .services {
-            background: #9d7118;
+            background: var(--green);
+            color: white;
+        }
+
+        .services .section-title h2,
+        .services .section-title p {
+            color: white;
         }
 
         .cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
+            max-width: 1250px;
+            margin: auto;
         }
 
         .card {
             background: white;
-            width: 300px;
-            padding: 35px 28px;
+            padding: 32px 26px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,.10);
+            border-radius: 5px;
         }
 
         .card-icon {
-            font-size: 42px;
+            font-size: 38px;
+            margin-bottom: 10px;
         }
 
         .card h3 {
-            color: #0b0b0b;
-            font-size: 24px;
+            color: var(--black);
+            font-size: 23px;
+            margin: 12px 0;
         }
 
         .card p {
@@ -223,130 +279,509 @@
             font-size: 15px;
         }
 
+        /* PACKAGES */
+        .packages {
+            background: #fff;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .package {
+            background: var(--cream);
+            border: 1px solid #e3d8c3;
+            padding: 30px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package.featured {
+            border: 2px solid var(--gold);
+            box-shadow: 0 12px 35px rgba(0,0,0,.10);
+        }
+
+        .package-label {
+            color: var(--gold-dark);
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .package h3 {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--gold-dark);
+            margin: 10px 0 20px;
+        }
+
+        .package ul {
+            padding-left: 20px;
+            color: #555;
+            line-height: 1.8;
+            font-family: Arial, sans-serif;
+            flex: 1;
+        }
+
+        .package li {
+            margin-bottom: 5px;
+        }
+
+        .package .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .price-note {
+            text-align: center;
+            margin: 35px auto 0;
+            max-width: 800px;
+            color: #666;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        /* SAMPLE MENUS */
+        .sample-menus {
+            background: var(--cream);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 30px;
+            border-top: 4px solid var(--gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+        }
+
+        .menu-card h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .menu-price {
+            color: var(--gold-dark);
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            margin-bottom: 18px;
+        }
+
+        .menu-card h4 {
+            color: #555;
+            font-family: Arial, sans-serif;
+            margin: 14px 0 5px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .menu-card p {
+            color: #555;
+            line-height: 1.7;
+            font-family: Arial, sans-serif;
+            margin: 5px 0;
+        }
+
+        /* PRIVATE CHEF */
+        .chef-network {
+            background:
+                linear-gradient(rgba(8,8,8,.90), rgba(8,8,8,.94)),
+                url("{% static 'images/food23.jpeg' %}") center/cover;
+            color: white;
+        }
+
+        .chef-network .section-title h2,
+        .chef-network .section-title p {
+            color: white;
+        }
+
+        .network-box {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .network-panel {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(216,181,106,.35);
+            padding: 35px;
+            border-radius: 5px;
+        }
+
+        .network-panel h3 {
+            color: var(--gold);
+            font-size: 27px;
+        }
+
+        .network-panel p,
+        .network-panel li {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            color: #eee;
+        }
+
+        /* TRAINING */
+        .training {
+            background: white;
+        }
+
+        .training-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .training-card {
+            border: 1px solid #ddd;
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .training-card h3 {
+            font-size: 23px;
+        }
+
+        .training-card p {
+            font-family: Arial, sans-serif;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* SHOPPING */
+        .shopping {
+            background: #eee7da;
+        }
+
+        .shopping-box {
+            max-width: 1050px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .shopping-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .shopping-option {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .shopping-option h3 {
+            font-size: 21px;
+        }
+
+        .shopping-option p {
+            font-family: Arial, sans-serif;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* GALLERY */
+        .gallery {
+            background: #f7f3eb;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 5px 18px rgba(0,0,0,.10);
+            transition: .3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* VIDEOS */
+        .video-gallery {
+            background: #111;
+            color: white;
+        }
+
+        .video-gallery .section-title h2,
+        .video-gallery .section-title p {
+            color: white;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .video-card {
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 230px;
+            display: block;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .video-card h3 {
+            color: var(--gold);
+            text-align: center;
+            padding: 15px 10px;
+            margin: 0;
+            font-size: 17px;
+        }
+
+        /* BOOKING */
+        .booking {
+            background: var(--green);
+            color: white;
+        }
+
+        .booking .section-title h2,
+        .booking .section-title p {
+            color: white;
+        }
+
+        .booking-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .booking-panel {
+            background: white;
+            color: #222;
+            padding: 35px;
+            border-radius: 5px;
+        }
+
+        .booking-panel h3 {
+            font-size: 27px;
+            margin-top: 0;
+        }
+
+        .booking-panel p {
+            font-family: Arial, sans-serif;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .booking-list {
+            padding-left: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: white;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
         /* CTA */
         .cta {
-            background: #0b0b0b;
+            background: var(--black);
             color: white;
             text-align: center;
         }
 
         .cta h2 {
-            font-size: 42px;
+            font-size: clamp(34px, 5vw, 48px);
             margin-top: 0;
         }
 
         .cta p {
             font-family: Arial, sans-serif;
-            line-height: 1.7;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #ddd;
         }
 
         /* FOOTER */
         footer {
-            background: #000000;
+            background: #000;
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 40px 20px;
             font-family: Arial, sans-serif;
         }
 
         footer strong {
-            color: #d8b56a;
+            color: var(--gold);
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            margin: 0 8px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 29px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.35);
+            z-index: 1100;
         }
 
         /* MOBILE */
-        @media (max-width: 768px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            .logo {
-                font-size: 17px;
-            }
-
-            nav div:last-child {
+        @media (max-width: 950px) {
+            nav .nav-links {
                 display: none;
             }
 
+            .about,
+            .network-box,
+            .booking-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 400px;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .shopping-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 65px 5%;
+            }
+
+            .hero {
+                padding: 130px 18px 80px;
+            }
+
             .hero h1 {
-                font-size: 42px;
+                font-size: 43px;
             }
 
             .hero p {
                 font-size: 17px;
             }
 
-            .about {
-                flex-direction: column;
-            }
-
             .about-image {
-                width: 100%;
                 min-height: 350px;
             }
 
-            .section-title h2 {
-                font-size: 34px;
+            .video-grid {
+                grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 65px 6%;
+            .video-card video {
+                height: 240px;
+            }
+
+            .whatsapp {
+                width: 54px;
+                height: 54px;
+                right: 18px;
+                bottom: 18px;
             }
         }
     </style>
-<link rel="canonical" href="https://chefdominiczacheaus.com/">
-<meta name="description" content="Private Chef Nairobi, fine dining, catering, wedding catering, cakes, cooking classes and baking classes by Chef Dominic Zacheaus of Dominic's Kitchen.">
-<meta name="author" content="Chef Dominic Zacheaus">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dominic's Kitchen | Private Chef Nairobi | Chef Dominic">
-<meta property="og:description" content="Private Chef Nairobi, fine dining, weddings, catering, cakes, cooking and baking training by Chef Dominic.">
-<meta property="og:url" content="https://chefdominiczacheaus.com/">
-<meta property="og:image" content="https://chefdominiczacheaus.com/static/images/chef-dominic.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dominic's Kitchen | Private Chef Nairobi | Chef Dominic">
-<meta name="twitter:description" content="Private Chef Nairobi, fine dining, catering, weddings, cakes, cooking and baking training by Chef Dominic.">
-<meta name="twitter:image" content="https://chefdominiczacheaus.com/static/images/chef-dominic.jpg">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ProfessionalService",
-  "name":"Dominic's Kitchen",
-  "url":"https://chefdominiczacheaus.com/",
-  "image":"https://chefdominiczacheaus.com/static/images/chef-dominic.jpg",
-  "telephone":"+254727305108",
-  "description":"Private chef, fine dining, catering, wedding catering, cakes, cooking classes and baking classes in Nairobi, Kenya.",
-  "areaServed":["Nairobi","Kenya"],
-  "founder":{
-    "@type":"Person",
-    "name":"Chef Dominic Zacheaus"
-  }
-}
-</script>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
-
 <nav>
     <div class="logo">DOMINIC'S KITCHEN</div>
 
-    <div>
+    <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#menus">Menus</a>
+        <a href="#chefs">Hire a Chef</a>
+        <a href="#training">Training</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="nav-button">Book Now</a>
     </div>
 </nav>
 
 
 <!-- HERO -->
-
-<!-- HERO -->
 <section class="hero" id="home">
     <div class="hero-content">
 
-        <small>PRIVATE CHEF ΓÇó FINE DINING ΓÇó CATERING ΓÇó PASTRY</small>
+        <small>PRIVATE CHEF â€¢ FINE DINING â€¢ CATERING â€¢ TRAINING</small>
 
         <h1>
             Where Luxury<br>
@@ -354,18 +789,17 @@
         </h1>
 
         <p>
-            Bespoke culinary experiences crafted by Chef Dominic ΓÇö
-            from intimate private dinners to unforgettable celebrations,
-            weddings and premium events.
+            Bespoke culinary experiences crafted by Chef Dominic â€”
+            from private dining and premium events to weddings,
+            corporate catering, custom menus, culinary training and
+            professional chef services.
         </p>
 
         <div class="hero-buttons">
-            <a class="button" href="#contact">
-                PLAN YOUR DINING EXPERIENCE
-            </a>
+            <a class="button" href="#menus">EXPLORE OUR MENUS</a>
 
             <a class="button button-outline"
-               href="https://wa.me/254727305108"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20to%20book%20a%20culinary%20service."
                target="_blank">
                 WHATSAPP CHEF DOMINIC
             </a>
@@ -373,13 +807,13 @@
 
     </div>
 </section>
-<!-- ABOUT -->
 
+
+<!-- ABOUT -->
 <section id="about">
 
     <div class="about">
 
-       
         <div class="about-image"></div>
 
         <div class="about-text">
@@ -391,25 +825,32 @@
             <h2>Meet Chef Dominic</h2>
 
             <p>
-                <p>
-    Chef Dominic is a professional chef passionate about creating
-    exceptional food and memorable dining experiences.
-</p>
+                Chef Dominic is a professional chef passionate about
+                exceptional food, beautiful presentation and memorable
+                dining experiences.
             </p>
 
             <p>
-                From intimate private dinners to weddings, corporate events
-                and handcrafted celebration cakes, every experience is
-                carefully planned and prepared with passion.
+                Dominic's Kitchen combines Continental cuisine, African
+                flavours, modern fusion, fine dining, pastry and
+                professional culinary service.
             </p>
 
             <p>
-                <p>
-    With a passion for Continental cuisine, African cuisine, fusion
-    dishes, fine dining and pastry, Chef Dominic brings creativity,
-    precision and professional service to every event.
-</p>
+                Whether you need a private chef at home, catering for a
+                wedding or corporate event, a celebration cake, a custom
+                menu, ingredients sourced and purchased for you, or
+                professional cooking and baking training, our service is
+                designed around your occasion.
             </p>
+
+            <p>
+                We can provide the chef only, handle the shopping and
+                ingredients, or manage the complete culinary experience
+                from planning to service.
+            </p>
+
+            <div class="signature">Chef Dominic â€” Dominic's Kitchen</div>
 
         </div>
 
@@ -419,7 +860,6 @@
 
 
 <!-- SERVICES -->
-
 <section class="services" id="services">
 
     <div class="section-title">
@@ -429,231 +869,655 @@
         <h2>Our Culinary Services</h2>
 
         <p>
-            From your home to your biggest celebration, Dominic's Kitchen
-            creates food experiences designed around you.
+            Professional culinary services designed for private clients,
+            families, companies, celebrations, weddings and special events.
         </p>
 
     </div>
 
-
     <div class="cards">
 
         <div class="card">
-
-            <div class="card-icon">≡ƒæ¿ΓÇì≡ƒì│</div>
-
+            <div class="card-icon">ðŸ‘¨â€ðŸ³</div>
             <h3>Private Chef</h3>
-
-              <p>
-    Exclusive private dining experiences crafted around your
-    preferences, occasion and guests.
-</p>  
-
+            <p>
+                Exclusive private dining prepared around your preferences,
+                occasion, guests and location.
+            </p>
         </div>
 
-
         <div class="card">
-
-            <div class="card-icon">≡ƒì╜∩╕Å</div>
-
+            <div class="card-icon">ðŸ½ï¸</div>
             <h3>Event Catering</h3>
-
             <p>
-                Professional catering for weddings, corporate events,
-                birthdays, parties and special occasions.
+                Professional catering for weddings, birthdays, corporate
+                events, celebrations and private functions.
             </p>
-
         </div>
 
+        <div class="card">
+            <div class="card-icon">ðŸ¥‚</div>
+            <h3>Fine Dining</h3>
+            <p>
+                Restaurant-quality cuisine, refined presentation and
+                memorable multi-course dining experiences.
+            </p>
+        </div>
 
         <div class="card">
+            <div class="card-icon">ðŸ’</div>
+            <h3>Weddings</h3>
+            <p>
+                Wedding menus, buffet service, culinary planning and
+                celebration cakes for your special day.
+            </p>
+        </div>
 
-            <div class="card-icon">≡ƒÄé</div>
-
+        <div class="card">
+            <div class="card-icon">ðŸŽ‚</div>
             <h3>Cakes & Pastry</h3>
-
             <p>
-                Beautiful celebration cakes, desserts and handcrafted
-                pastry made for memorable occasions.
+                Celebration cakes, desserts and handcrafted pastry for
+                birthdays, weddings and special occasions.
             </p>
-
         </div>
 
+        <div class="card">
+            <div class="card-icon">ðŸ¢</div>
+            <h3>Corporate Catering</h3>
+            <p>
+                Breakfasts, lunches, meetings, corporate events and
+                professional hospitality services.
+            </p>
+        </div>
 
         <div class="card">
-
-            <div class="card-icon">≡ƒÆì</div>
-
-            <h3>Wedding Catering</h3>
-
+            <div class="card-icon">ðŸŽ“</div>
+            <h3>Cooking Training</h3>
             <p>
-                Complete culinary experiences for your special day,
-                including wedding menus and celebration cakes.
+                Practical cooking training for beginners, home cooks,
+                aspiring chefs and professional development.
             </p>
-<div class="card">
+        </div>
 
-    <div class="card-icon">≡ƒÑé</div>
-
-
-
-    <h3>Fine Dining Experiences</h3>
-
-    <p>
-        Restaurant-quality cuisine, beautiful presentation and
-        memorable dining experiences in the comfort of your venue.
-    </p>
-
-</div>
+        <div class="card">
+            <div class="card-icon">ðŸ§</div>
+            <h3>Baking & Pastry Training</h3>
+            <p>
+                Hands-on baking and pastry training covering cakes,
+                desserts, pastry techniques and professional skills.
+            </p>
         </div>
 
     </div>
 
 </section>
 
-<!-- WHY CHOOSE US -->
 
-<section style="background:#f7f3eb; text-align:center;">
+<!-- MENUS & PACKAGES -->
+<section class="packages" id="menus">
 
     <div class="section-title">
 
-        <small>THE DOMINIC'S KITCHEN EXPERIENCE</small>
+        <small>MENUS & PACKAGES</small>
 
-        <h2>Why Choose Us?</h2>
+        <h2>Choose Your Culinary Experience</h2>
 
         <p>
-            Every detail is thoughtfully prepared to give you exceptional
-            food, professional service and an experience worth remembering.
+            Our packages provide a starting point. Menus can be customised
+            according to your occasion, guest count, dietary requirements,
+            location and budget.
         </p>
 
     </div>
 
-    <div class="cards">
+    <div class="package-grid">
 
-        <div class="card">
-            <div class="card-icon">Γ£¿</div>
-            <h3>Exceptional Quality</h3>
-            <p>
-                Carefully selected ingredients, professional preparation
-                and attention to every detail.
-            </p>
+        <div class="package">
+            <span class="package-label">Private Dining</span>
+            <h3>Intimate Dinner</h3>
+            <div class="price">From KSh 15,000</div>
+            <ul>
+                <li>Private chef service</li>
+                <li>Custom menu planning</li>
+                <li>Multi-course dining</li>
+                <li>Professional plating</li>
+                <li>Menu tailored to your occasion</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20am%20interested%20in%20the%20Intimate%20Dinner%20package." target="_blank">ENQUIRE</a>
         </div>
 
-        <div class="card">
-            <div class="card-icon">≡ƒæ¿ΓÇì≡ƒì│</div>
-            <h3>Chef-Led Service</h3>
-            <p>
-                Your experience is personally guided by Chef Dominic,
-                from planning through to presentation.
-            </p>
+        <div class="package featured">
+            <span class="package-label">Signature Experience</span>
+            <h3>Fine Dining Experience</h3>
+            <div class="price">From KSh 25,000</div>
+            <ul>
+                <li>Premium multi-course menu</li>
+                <li>Fine dining presentation</li>
+                <li>Chef-led service</li>
+                <li>Custom menu development</li>
+                <li>Premium ingredients</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20am%20interested%20in%20the%20Fine%20Dining%20Experience." target="_blank">ENQUIRE</a>
         </div>
 
-        <div class="card">
-            <div class="card-icon">≡ƒÑé</div>
-            <h3>Made For Your Occasion</h3>
-            <p>
-                Menus and experiences are tailored to your event,
-                guests, preferences and budget.
-            </p>
+        <div class="package">
+            <span class="package-label">Family & Groups</span>
+            <h3>Family Dining</h3>
+            <div class="price">From KSh 20,000</div>
+            <ul>
+                <li>Family-style or plated service</li>
+                <li>Custom menu</li>
+                <li>African & Continental options</li>
+                <li>Ingredient shopping available</li>
+                <li>Chef service at your location</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20am%20interested%20in%20Family%20Dining." target="_blank">ENQUIRE</a>
+        </div>
+
+        <div class="package">
+            <span class="package-label">Corporate</span>
+            <h3>Corporate Catering</h3>
+            <div class="price">From KSh 1,200 / guest</div>
+            <ul>
+                <li>Breakfast and lunch options</li>
+                <li>Corporate buffet service</li>
+                <li>Refreshments available</li>
+                <li>Custom menu planning</li>
+                <li>Professional presentation</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20need%20a%20corporate%20catering%20quotation." target="_blank">GET QUOTE</a>
+        </div>
+
+        <div class="package">
+            <span class="package-label">Events</span>
+            <h3>Celebration Catering</h3>
+            <div class="price">From KSh 1,000 / guest</div>
+            <ul>
+                <li>Birthday and celebration menus</li>
+                <li>Buffet or plated service</li>
+                <li>CanapÃ©s available</li>
+                <li>Dessert options</li>
+                <li>Custom event quotation</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20need%20catering%20for%20an%20event." target="_blank">GET QUOTE</a>
+        </div>
+
+        <div class="package">
+            <span class="package-label">Weddings</span>
+            <h3>Wedding Culinary Package</h3>
+            <div class="price">Custom Quote</div>
+            <ul>
+                <li>Wedding menu planning</li>
+                <li>Professional kitchen team</li>
+                <li>Buffet or plated service</li>
+                <li>Desserts and cake available</li>
+                <li>Complete event catering option</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20am%20planning%20a%20wedding%20and%20need%20a%20catering%20quotation." target="_blank">PLAN MY WEDDING</a>
+        </div>
+
+        <div class="package">
+            <span class="package-label">Cakes</span>
+            <h3>Celebration Cakes</h3>
+            <div class="price">Custom Quote</div>
+            <ul>
+                <li>Birthday cakes</li>
+                <li>Wedding cakes</li>
+                <li>Celebration cakes</li>
+                <li>Desserts and pastry</li>
+                <li>Custom designs available</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20to%20order%20a%20cake." target="_blank">ORDER A CAKE</a>
+        </div>
+
+        <div class="package">
+            <span class="package-label">Custom</span>
+            <h3>Bespoke Culinary Service</h3>
+            <div class="price">Let's Build Your Package</div>
+            <ul>
+                <li>Custom menu creation</li>
+                <li>Chef service</li>
+                <li>Ingredient shopping</li>
+                <li>Kitchen team if required</li>
+                <li>Complete culinary management</li>
+            </ul>
+            <a class="button" href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I would%20like%20a%20custom%20culinary%20package." target="_blank">CREATE MY PACKAGE</a>
         </div>
 
     </div>
 
-</section>
-<section class="cta" id="contact">
-
-    <h2>Let's Create Something Delicious</h2>
-
-    <p>
-        Planning an event or looking for a private dining experience?
-        Let's talk about your next occasion.
+    <p class="price-note">
+        <strong>Pricing note:</strong> Prices shown are starting prices for planning purposes.
+        Final pricing depends on guest numbers, menu complexity, ingredients,
+        location, service duration, staffing and special requirements.
+        Contact Dominic's Kitchen for an exact quotation.
     </p>
 
-    <a class="button" href="https://wa.me/254727305108" target="_blank">
-    WHATSAPP CHEF DOMINIC
-</a>
+</section>
 
-<p style="margin-top:20px;">
-    <strong>Call / WhatsApp:</strong><br>
-    +254 727 305 108 &nbsp; | &nbsp; +254 723 921 309
-</p>
-    </a>
+
+<!-- SAMPLE MENUS -->
+<section class="sample-menus" id="sample-menus">
+
+    <div class="section-title">
+
+        <small>OUR MENU COLLECTION</small>
+
+        <h2>Sample Menus</h2>
+
+        <p>
+            These are examples of the culinary experiences Dominic's Kitchen
+            can create. Menus can be adjusted to suit your guests, occasion
+            and budget.
+        </p>
+
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <h3>01. African Continental Fusion</h3>
+            <div class="menu-price">From KSh 1,500 per guest</div>
+
+            <h4>Starter</h4>
+            <p>Beef samosa â€¢ Chicken spring roll â€¢ Fresh garden salad</p>
+
+            <h4>Main Course</h4>
+            <p>Grilled chicken â€¢ Beef stew â€¢ Coconut rice â€¢ Roast potatoes â€¢ Chapati</p>
+
+            <h4>Side</h4>
+            <p>Kachumbari â€¢ Seasonal vegetables</p>
+
+            <h4>Dessert</h4>
+            <p>Fresh fruit platter â€¢ Mini cake selection</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>02. Kenyan Luxury Buffet</h3>
+            <div class="menu-price">From KSh 1,800 per guest</div>
+
+            <h4>Starter</h4>
+            <p>Beef samosas â€¢ Vegetable spring rolls â€¢ Kachumbari</p>
+
+            <h4>Main Course</h4>
+            <p>Premium beef stew â€¢ Wet chicken â€¢ Pilau â€¢ White rice â€¢ Chapati</p>
+
+            <h4>Vegetables</h4>
+            <p>Seasonal mixed vegetables â€¢ Creamy mashed potatoes</p>
+
+            <h4>Dessert</h4>
+            <p>Fruit cups â€¢ Chocolate mousse</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>03. Private Fine Dining</h3>
+            <div class="menu-price">From KSh 3,500 per guest</div>
+
+            <h4>Starter</h4>
+            <p>Chef's seasonal canapÃ© selection</p>
+
+            <h4>Second Course</h4>
+            <p>Signature soup or composed salad</p>
+
+            <h4>Main Course</h4>
+            <p>Chef-selected premium protein â€¢ Potato preparation â€¢ Seasonal vegetables</p>
+
+            <h4>Dessert</h4>
+            <p>Chocolate mousse â€¢ Fresh berries â€¢ Chef's dessert garnish</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>04. Corporate Lunch</h3>
+            <div class="menu-price">From KSh 1,200 per guest</div>
+
+            <h4>Starter</h4>
+            <p>Garden salad â€¢ Vegetable spring rolls</p>
+
+            <h4>Main Course</h4>
+            <p>Grilled chicken â€¢ Beef stew â€¢ Rice â€¢ Potatoes â€¢ Seasonal vegetables</p>
+
+            <h4>Accompaniments</h4>
+            <p>Chapati â€¢ Kachumbari</p>
+
+            <h4>Drinks</h4>
+            <p>Fresh juice â€¢ Mineral water</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>05. Celebration Menu</h3>
+            <div class="menu-price">From KSh 1,500 per guest</div>
+
+            <h4>CanapÃ©s</h4>
+            <p>Mini samosas â€¢ Chicken spring rolls â€¢ BBQ wings</p>
+
+            <h4>Main Course</h4>
+            <p>Chicken â€¢ Beef â€¢ Rice â€¢ Potatoes â€¢ Chapati â€¢ Mixed vegetables</p>
+
+            <h4>Salads</h4>
+            <p>Kachumbari â€¢ Apple salad â€¢ Garden salad</p>
+
+            <h4>Dessert</h4>
+            <p>Fruit cups â€¢ Cake selection</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>06. Premium Dinner for Two</h3>
+            <div class="menu-price">From KSh 12,000 for two</div>
+
+            <h4>Welcome Bite</h4>
+            <p>Chef's amuse-bouche</p>
+
+            <h4>Starter</h4>
+            <p>Signature salad or soup</p>
+
+            <h4>Main Course</h4>
+            <p>Chef-selected protein â€¢ Signature starch â€¢ Seasonal vegetables</p>
+
+            <h4>Dessert</h4>
+            <p>Chocolate mousse or signature plated dessert</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>07. Breakfast Experience</h3>
+            <div class="menu-price">From KSh 900 per guest</div>
+
+            <h4>Bakery</h4>
+            <p>Fresh mandazi â€¢ Pastry â€¢ Toast</p>
+
+            <h4>Hot Breakfast</h4>
+            <p>Eggs â€¢ Sausage â€¢ Crispy bacon â€¢ Potatoes</p>
+
+            <h4>Local Selection</h4>
+            <p>Chapati â€¢ Uji power</p>
+
+            <h4>Drinks</h4>
+            <p>Tea â€¢ Coffee â€¢ Fresh juice</p>
+        </div>
+
+        <div class="menu-card">
+            <h3>08. Western Kenya Fusion</h3>
+            <div class="menu-price">From KSh 1,500 per guest</div>
+
+            <h4>Starter</h4>
+            <p>Beef samosa â€¢ Chicken spring roll â€¢ Kachumbari</p>
+
+            <h4>Main Course</h4>
+            <p>Beef â€¢ Chicken â€¢ Pilau â€¢ Rice â€¢ Chapati â€¢ Traditional vegetables</p>
+
+            <h4>Salad</h4>
+            <p>Fresh garden salad â€¢ Apple salad</p>
+
+            <h4>Dessert</h4>
+            <p>Fruit platter â€¢ Celebration cake selection</p>
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- FOOTER -->
-<!-- TESTIMONIALS -->
-
-<section style="background:white; text-align:center;">
+<!-- PRIVATE CHEF NETWORK -->
+<section class="chef-network" id="chefs">
 
     <div class="section-title">
-        <small>CLIENT EXPERIENCES</small>
-        <h2>What Our Clients Say</h2>
+
+        <small>PRIVATE CHEF NETWORK</small>
+
+        <h2>Looking for a Private Chef?</h2>
+
+        <p>
+            Dominic's Kitchen can help connect clients with suitable culinary
+            professionals for private homes, events, holidays, corporate
+            assignments and extended chef placements.
+        </p>
+
     </div>
 
-    <div class="cards">
+    <div class="network-box">
 
-        <div class="card">
-            <p>"Chef Dominic exceeded our expectations. The food was outstanding and beautifully presented."</p>
-            <h4>ΓÇö Sarah M.</h4>
+        <div class="network-panel">
+
+            <h3>For Clients</h3>
+
+            <p>
+                Tell us what kind of chef you need and we will review your
+                requirements and help match you with an appropriate chef.
+            </p>
+
+            <ul>
+                <li>Private home chef</li>
+                <li>Holiday chef</li>
+                <li>Event chef</li>
+                <li>Corporate chef</li>
+                <li>Short-term chef assignments</li>
+                <li>Longer chef placements</li>
+                <li>Specialised cuisine requirements</li>
+            </ul>
+
+            <a class="button"
+               href="https://wa.me/254727305108?text=PRIVATE%20CHEF%20REQUEST%0A%0ALocation%3A%0ADate%3A%0ANumber%20of%20guests%3A%0ADuration%3A%0ACuisine%3A%0ARequirements%3A"
+               target="_blank">
+                REQUEST A CHEF
+            </a>
+
         </div>
 
-        <div class="card">
-            <p>"Professional, punctual and incredibly talented. Our guests are still talking about the meal."</p>
-            <h4>ΓÇö James K.</h4>
-        </div>
+        <div class="network-panel">
 
-        <div class="card">
-            <p>"A truly bespoke dining experience. Every detail was perfect."</p>
-            <h4>ΓÇö Winnie N.</h4>
+            <h3>For Employers</h3>
+
+            <p>
+                If you are looking for a chef for your home, company,
+                property, event or hospitality operation, send us your
+                requirements.
+            </p>
+
+            <p>
+                Dominic's Kitchen can review the assignment and coordinate
+                an appropriate chef based on the required experience,
+                cuisine, duration and responsibilities.
+            </p>
+
+            <a class="button"
+               href="https://wa.me/254727305108?text=EMPLOYER%20CHEF%20REQUEST%0A%0ACompany%2FProperty%3A%0ALocation%3A%0AStart%20date%3A%0ADuration%3A%0AType%20of%20chef%20required%3A%0AResponsibilities%3A%0ABudget%3A"
+               target="_blank">
+                FIND A CHEF
+            </a>
+
         </div>
 
     </div>
 
 </section>
-<<!-- GALLERY -->
 
-<section style="background:#f7f3eb; text-align:center;">
 
-```
-<div class="section-title">
-    <small>SIGNATURE MOMENTS</small>
-    <h2>Gallery</h2>
-    <p>A glimpse into our culinary experiences.</p>
-</div>
+<!-- TRAINING -->
+<section class="training" id="training">
 
-<div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    padding:40px;
-    max-width:1200px;
-    margin:auto;">
-
-    <img src="{% static 'images/food1.jpeg' %}"
-     style="width:100%; border-radius:15px;">
-
-    <img src="{% static 'images/food12.jpeg' %}"
-     style="width:100%; border-radius:15px;">
-
-    <img src="{% static 'images/food23.jpeg' %}"
-         style="width:100%; border-radius:15px;">
-
-    <img src="{% static 'images/cake1.jpeg' %}"
-         style="width:100%; border-radius:15px;">
-    <img src="{% static 'images/cake2.jpeg' %}"
-         style="width:100%; border-radius:15px;">
-
-    <img src="{% static 'images/cake3.jpeg' %}"
-         style="width:100%; border-radius:15px;">
-
-    <img src="{% static 'images/CAKE.jpeg' %}"
-         style="width:100%; border-radius:15px;">
-
-    <section class="video-gallery" id="videos">
     <div class="section-title">
-        <h2>Behind the Scenes</h2>
-        <p>Experience the passion, creativity, and craftsmanship behind DominicΓÇÖs Kitchen.</p>
+
+        <small>DOMINIC'S KITCHEN ACADEMY</small>
+
+        <h2>Cooking & Baking Training</h2>
+
+        <p>
+            We don't only prepare food â€” we also train people who want to
+            learn, improve or build professional culinary skills.
+        </p>
+
+    </div>
+
+    <div class="training-grid">
+
+        <div class="training-card">
+            <div class="card-icon">ðŸ³</div>
+            <h3>Cooking Classes</h3>
+            <p>
+                Practical cooking lessons covering kitchen fundamentals,
+                sauces, proteins, vegetables, starches, African cuisine,
+                Continental cuisine and fusion cooking.
+            </p>
+            <a class="button"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20information%20about%20cooking%20training."
+               target="_blank">
+                ASK ABOUT TRAINING
+            </a>
+        </div>
+
+        <div class="training-card">
+            <div class="card-icon">ðŸ§</div>
+            <h3>Baking Classes</h3>
+            <p>
+                Hands-on training in cakes, pastry, desserts, baking
+                techniques, production and presentation.
+            </p>
+            <a class="button"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20information%20about%20baking%20training."
+               target="_blank">
+                ASK ABOUT TRAINING
+            </a>
+        </div>
+
+        <div class="training-card">
+            <div class="card-icon">ðŸŽ‚</div>
+            <h3>Cake & Pastry Training</h3>
+            <p>
+                Learn cake preparation, decorating, pastry techniques,
+                desserts and professional production methods.
+            </p>
+            <a class="button"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20information%20about%20cake%20and%20pastry%20training."
+               target="_blank">
+                ENQUIRE
+            </a>
+        </div>
+
+        <div class="training-card">
+            <div class="card-icon">ðŸ‘¨â€ðŸ³</div>
+            <h3>Private One-on-One Training</h3>
+            <p>
+                Personalised culinary training designed around your skill
+                level, goals and preferred cuisine.
+            </p>
+            <a class="button"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20private%20one-on-one%20culinary%20training."
+               target="_blank">
+                ENQUIRE
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SHOPPING SERVICE -->
+<section class="shopping" id="shopping">
+
+    <div class="section-title">
+
+        <small>INGREDIENT SOURCING</small>
+
+        <h2>We Can Handle the Shopping Too</h2>
+
+        <p>
+            You don't have to worry about sourcing every ingredient.
+            Dominic's Kitchen can plan, source and purchase the ingredients
+            required for your menu as part of your culinary service.
+        </p>
+
+    </div>
+
+    <div class="shopping-box">
+
+        <div class="shopping-options">
+
+            <div class="shopping-option">
+                <h3>Chef Only</h3>
+                <p>
+                    You provide the ingredients and kitchen facilities.
+                    We provide the chef and culinary service.
+                </p>
+            </div>
+
+            <div class="shopping-option">
+                <h3>Chef + Shopping</h3>
+                <p>
+                    We plan the ingredient requirements and handle shopping
+                    and procurement for your approved menu.
+                </p>
+            </div>
+
+            <div class="shopping-option">
+                <h3>Complete Service</h3>
+                <p>
+                    We can manage menu planning, shopping, preparation,
+                    cooking, presentation and service.
+                </p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <a class="button"
+           href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20you%20to%20handle%20shopping%20and%20ingredients%20for%20my%20menu."
+           target="_blank">
+            REQUEST SHOPPING SERVICE
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+    <div class="section-title">
+
+        <small>SIGNATURE MOMENTS</small>
+
+        <h2>Our Work</h2>
+
+        <p>
+            A glimpse into the food, cakes and culinary experiences created
+            by Dominic's Kitchen.
+        </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="{% static 'images/food1.jpeg' %}" alt="Dominic's Kitchen food">
+        <img src="{% static 'images/food12.jpeg' %}" alt="Dominic's Kitchen dish">
+        <img src="{% static 'images/food23.jpeg' %}" alt="Fine dining dish">
+        <img src="{% static 'images/cake1.jpeg' %}" alt="Dominic's Kitchen cake">
+        <img src="{% static 'images/cake2.jpeg' %}" alt="Celebration cake">
+        <img src="{% static 'images/cake3.jpeg' %}" alt="Custom cake">
+        <img src="{% static 'images/CAKE.jpeg' %}" alt="Dominic's Kitchen cake">
+        <img src="{% static 'images/chef-dominic.jpg' %}" alt="Chef Dominic">
+
+    </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+<section class="video-gallery" id="videos">
+
+    <div class="section-title">
+
+        <small>BEHIND THE SCENES</small>
+
+        <h2>Chef Dominic in Action</h2>
+
+        <p>
+            Experience the passion, creativity and craftsmanship behind
+            Dominic's Kitchen.
+        </p>
+
     </div>
 
     <div class="video-grid">
@@ -662,7 +1526,7 @@
             <video controls preload="metadata">
                 <source src="{% static 'VIDEOS/vid1.mp4' %}" type="video/mp4">
             </video>
-            <h3>DominicΓÇÖs Kitchen</h3>
+            <h3>Dominic's Kitchen</h3>
         </div>
 
         <div class="video-card">
@@ -718,112 +1582,191 @@
             <video controls preload="metadata">
                 <source src="{% static 'VIDEOS/vid9.mp4' %}" type="video/mp4">
             </video>
-            <h3>The DominicΓÇÖs Kitchen Experience</h3>
+            <h3>The Dominic's Kitchen Experience</h3>
         </div>
 
     </div>
+
 </section>
 
-<style>
-.video-gallery {
-    padding: 70px 8%;
-    background: #111;
-}
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 40px;
-}
+<!-- TESTIMONIALS -->
+<section class="testimonials">
 
-.video-card {
-    background: #1a1a1a;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #333;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-}
+    <div class="section-title">
 
-.video-card video {
-    width: 100%;
-    height: 230px;
-    display: block;
-    object-fit: cover;
-    background: #000;
-}
+        <small>CLIENT EXPERIENCES</small>
 
-.video-card h3 {
-    color: #d4af37;
-    text-align: center;
-    padding: 15px 10px;
-    margin: 0;
-    font-size: 17px;
-}
+        <h2>What Our Clients Say</h2>
 
-@media (max-width: 900px) {
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+    </div>
 
-@media (max-width: 600px) {
-    .video-gallery {
-        padding: 50px 15px;
-    }
+    <div class="cards">
 
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 30px;
-    }
+        <div class="card">
+            <p class="quote">
+                "Chef Dominic exceeded our expectations. The food was
+                outstanding and beautifully presented."
+            </p>
+            <h4>â€” Sarah M.</h4>
+        </div>
 
-    .video-card {
-        border-radius: 14px;
-    }
+        <div class="card">
+            <p class="quote">
+                "Professional, punctual and incredibly talented. Our guests
+                are still talking about the meal."
+            </p>
+            <h4>â€” James K.</h4>
+        </div>
 
-    .video-card video {
-        height: 240px;
-    }
+        <div class="card">
+            <p class="quote">
+                "A truly bespoke dining experience. Every detail was perfect."
+            </p>
+            <h4>â€” Winnie N.</h4>
+        </div>
 
-    .video-card h3 {
-        font-size: 16px;
-        padding: 14px 8px;
-    }
-}
-</style>
+    </div>
+
+</section>
+
+
+<!-- BOOKING -->
+<section class="booking" id="contact">
+
+    <div class="section-title">
+
+        <small>START YOUR EXPERIENCE</small>
+
+        <h2>Tell Us What You Need</h2>
+
+        <p>
+            Whether you need Chef Dominic personally, a private chef from
+            our network, catering, training, shopping or a complete
+            culinary solution, send us your requirements.
+        </p>
+
+    </div>
+
+    <div class="booking-grid">
+
+        <div class="booking-panel">
+
+            <h3>Book Dominic's Kitchen</h3>
+
+            <p>
+                We can assist with:
+            </p>
+
+            <ul class="booking-list">
+                <li>Private chef bookings</li>
+                <li>Private dinners</li>
+                <li>Weddings</li>
+                <li>Corporate events</li>
+                <li>Birthday and celebration catering</li>
+                <li>Custom menus</li>
+                <li>Cakes and pastry</li>
+                <li>Ingredient shopping</li>
+                <li>Cooking training</li>
+                <li>Baking and pastry training</li>
+            </ul>
+
+            <a class="button"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20to%20make%20a%20booking.%0A%0AService%3A%0ADate%3A%0ALocation%3A%0ANumber%20of%20guests%3A%0ABudget%3A%0AAdditional%20requirements%3A"
+               target="_blank">
+                SEND BOOKING REQUEST
+            </a>
+
+        </div>
+
+        <div class="booking-panel">
+
+            <h3>Let's Build Your Menu</h3>
+
+            <p>
+                Don't see exactly what you want?
+            </p>
+
+            <p>
+                No problem. Dominic's Kitchen creates bespoke menus based
+                on your preferred cuisine, occasion, guest count, dietary
+                needs and budget.
+            </p>
+
+            <p>
+                We can also handle the ingredients and shopping so you can
+                simply enjoy the experience.
+            </p>
+
+            <a class="button"
+               href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20need%20a%20custom%20menu.%0A%0AOccasion%3A%0ADate%3A%0ANumber%20of%20guests%3A%0APreferred%20cuisine%3A%0ABudget%3A%0ARequirements%3A"
+               target="_blank">
+                CREATE A CUSTOM MENU
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="cta">
+
+    <h2>Let's Create Something Delicious</h2>
+
+    <p>
+        From a private dinner for two to a wedding for hundreds,
+        Dominic's Kitchen brings professional culinary expertise,
+        creativity and personalised service to your table.
+    </p>
+
+    <a class="button"
+       href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20would%20like%20to%20discuss%20a%20culinary%20experience."
+       target="_blank">
+        WHATSAPP CHEF DOMINIC
+    </a>
+
+    <p style="margin-top:25px;">
+        <strong>Call / WhatsApp:</strong><br>
+        +254 727 305 108 &nbsp; | &nbsp; +254 723 921 309
+    </p>
+
+</section>
+
 
 <!-- FOOTER -->
 <footer>
-    <p>
-        ┬⌐ 2026 <strong>Dominic's Kitchen</strong>
-    </p>
 
     <p>
-        Private Chef ΓÇó Fine Dining ΓÇó Catering ΓÇó Pastry
+        Â© 2026 <strong>Dominic's Kitchen</strong>
     </p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#menus">Menus</a>
+        <a href="#chefs">Hire a Chef</a>
+        <a href="#training">Training</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <p>
+        Private Chef â€¢ Fine Dining â€¢ Catering â€¢ Weddings â€¢ Cakes â€¢ Training
+    </p>
+
 </footer>
 
-<a href="https://wa.me/254727305108"
-   style="
-   position:fixed;
-   width:60px;
-   height:60px;
-   bottom:25px;
-   right:25px;
-   background:#25D366;
-   color:white;
-   border-radius:50%;
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   text-decoration:none;
-   font-size:30px;
-   box-shadow:0 4px 10px rgba(0,0,0,.3);
-   z-index:1000;">
-   ≡ƒÆ¼
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/254727305108?text=Hello%20Chef%20Dominic%2C%20I%20found%20Dominic's%20Kitchen%20online%20and%20would%20like%20to%20make%20an%20enquiry."
+   target="_blank"
+   aria-label="WhatsApp Chef Dominic">
+    ðŸ’¬
 </a>
 
 </body>
 </html>
-
