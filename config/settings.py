@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-development-key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-ALLOWED_HOSTS = ['dominics-kitchen.onrender.com', 'chefdominiczacheaus.com', 'www.chefdominiczacheaus.com', '127.0.0.1', 'localhost', 'testserver']
+ALLOWED_HOSTS = ['dominics-kitchen.onrender.com', 'dominics-kitchen-1.onrender.com', 'chefdominiczacheaus.com', 'www.chefdominiczacheaus.com', '127.0.0.1', 'localhost', 'testserver']
 
 
 # Application definition
@@ -134,4 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CSRF_TRUSTED_ORIGINS = ['https://chefdominiczacheaus.com', 'https://www.chefdominiczacheaus.com', 'https://dominics-kitchen.onrender.com']
+
 
