@@ -11,3 +11,5 @@ db.sqlite3
 *_backup_*.html
 *_before_seo_*.html
 *_before_link_fix_*.py
+
+staticfiles/
